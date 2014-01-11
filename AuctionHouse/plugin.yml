@@ -1,0 +1,14 @@
+name: AuctionHouse
+main: com.gmail.murkhies.AuctionHouse
+version: 0.0.1
+commands:
+   auction:
+      description: Basic command for the plugin to create and use AuctionHouses.
+      aliases: [ah]
+permissions:
+    auctioner.start: Start a new auction.
+        description: 
+        default: true
+    auctioner.stop:
+        description: Stop the current auction.
+        default: op
