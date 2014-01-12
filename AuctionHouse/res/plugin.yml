@@ -1,5 +1,5 @@
 name: AuctionHouse
-main: com.gmail.murkhies.AuctionHouse
+main: com.gmail.murkhies.AuctionHouse.AuctionHouse
 version: 0.0.1
 commands:
    auction:

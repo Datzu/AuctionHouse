@@ -29,7 +29,6 @@ public class CommandHandler implements CommandExecutor {
 				
 			} else {
 				sender.sendMessage("You must be a player!");
-				return false;
 			}
 		} else if (command.getName().equalsIgnoreCase("auctionset")) {
 			
