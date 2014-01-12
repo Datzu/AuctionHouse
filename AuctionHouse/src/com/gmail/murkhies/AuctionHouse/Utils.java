@@ -1,5 +1,7 @@
 package com.gmail.murkhies.AuctionHouse;
 
+import java.io.File;
+
 public class Utils {
 	
 	private static boolean running;
@@ -26,4 +28,8 @@ public class Utils {
 		return false;
 	}
 	
+	public static boolean isConfigured() {
+		File file = new File ("." + File.separator);
+		return false;
+	}
 }
