@@ -17,22 +17,25 @@ public class CommandHandler implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
 		
-		// check if is a player
-		if (sender instanceof Player) {
-			Player player = (Player) sender;
-			
-			if (Utils.isConfigured()) {
-				sender.sendMessage("1!");
+		if (command.getName().equalsIgnoreCase("auction")) {
+			if (sender instanceof Player) {
+				Player player = (Player) sender;
+				
+				if (Utils.isConfigured()) {
+					sender.sendMessage("1!");
+				} else {
+					sender.sendMessage("2!");
+				}
+				
 			} else {
-				sender.sendMessage("2!");
+				sender.sendMessage("You must be a player!");
+				return false;
 			}
+		} else if (command.getName().equalsIgnoreCase("auctionset")) {
 			
-		} else {
-			sender.sendMessage("You must be a player!");
-			return false;
 		}
-
-		return false;
+		
+		return true;
 
 	}
 	
