@@ -1,21 +1,65 @@
 package com.gmail.murkhies.AuctionHouse;
 
-import java.util.HashMap;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.ArrayList;
 
 public class Zone {
 	
-	private HashMap<String, Position> zone = new HashMap<String, Position>();
+	private ArrayList<Position> zone = new ArrayList<Position>();
 	
 	public Zone() {
 		
 	}
-
-	public HashMap<String, Position> getZone() {
+	
+	public ArrayList<Position> getZone() {
 		return zone;
 	}
 
-	public void setZone(HashMap<String, Position> zone) {
+	public void setZone(ArrayList<Position> zone) {
 		this.zone = zone;
+	}
+
+	public String toString(int i) {
+		return "Zone [zone=" + zone.toString() + "]";
+	}
+
+	public boolean addAuctionerPosition(Position pos) {
+		try {
+			this.zone.add(0, pos);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean addPosition(Position pos) {
+		try {
+			this.zone.add(pos);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean save() {
+		System.out.println(Utils.file.getAbsolutePath());
+		String cad = "";
+		if (Utils.file.exists()) {
+			for (Position pos : zone) {
+				cad = cad + pos.getX() + " " + pos.getY() + " " + pos.getZ() + "\n";
+			}
+			try {
+				BufferedWriter output = new BufferedWriter(new FileWriter(Utils.file));
+				output.write(cad);
+				output.close();
+			} catch (Exception e) {
+				return false;
+			}
+		} else {
+			return false;
+		}
+		return true;
 	}
 
 }

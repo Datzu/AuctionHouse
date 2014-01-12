@@ -5,33 +5,30 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandHandler implements CommandExecutor {
+public class CommandHandlerAuction implements CommandExecutor {
 
 	AuctionHouse plugin;
 
-	public CommandHandler(AuctionHouse instance) {
+	public CommandHandlerAuction(AuctionHouse instance) {
 		plugin = instance;
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command command,
-			String label, String[] args) {
+	public boolean onCommand(CommandSender sender, Command command,	String label, String[] args) {
 		
 		if (command.getName().equalsIgnoreCase("auction")) {
 			if (sender instanceof Player) {
 				Player player = (Player) sender;
 				
-				if (Utils.isConfigured()) {
-					sender.sendMessage("1!");
+				if (Utils.isConfigured(plugin)) {
+					
 				} else {
-					sender.sendMessage("2!");
+					player.sendMessage(Strings.NO_ZONE);
 				}
 				
 			} else {
-				sender.sendMessage("You must be a player!");
+				sender.sendMessage(Strings.NO_PLAYER);
 			}
-		} else if (command.getName().equalsIgnoreCase("auctionset")) {
-			
 		}
 		
 		return true;

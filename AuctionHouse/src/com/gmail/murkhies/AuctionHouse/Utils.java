@@ -5,7 +5,12 @@ import java.io.File;
 public class Utils {
 	
 	private static boolean running;
+	
 	private static Auction auction;
+	
+	private static String path;
+	
+	public static File file;
 
 	public static boolean isRunning() {
 		return running;
@@ -28,8 +33,36 @@ public class Utils {
 		return false;
 	}
 	
-	public static boolean isConfigured() {
-		File file = new File ("." + File.separator);
+	public static boolean isConfigured(AuctionHouse plugin) {
+		if (file.exists()) {
+			return true;
+		}
 		return false;
+	}
+	
+	public static void preLoad() {
+		Utils.path = CommandHandlerAuctionConf.plugin.getDataFolder() + File.separator + "auctionhouse" + File.separator + "config.txt";
+		file = new File (Utils.path);
+	}
+	
+	public static boolean createConf() {
+		try {
+			if (!file.exists()) {
+				file.mkdir();
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public static boolean existsFile() {
+		if (file.exists()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

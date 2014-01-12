@@ -6,8 +6,9 @@ public class AuctionHouse extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		this.getCommand("auction").setExecutor(new CommandHandler(this));
-		this.getCommand("auctionset").setExecutor(new CommandHandler(this));
+		this.getCommand("auction").setExecutor(new CommandHandlerAuction(this));
+		this.getCommand("auctionset").setExecutor(new CommandHandlerAuctionConf(this));
+		Utils.preLoad();
 		getLogger().info("AuctionHouse loaded sucefully!");
 	}
 
