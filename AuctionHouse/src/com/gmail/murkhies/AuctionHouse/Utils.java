@@ -10,6 +10,8 @@ public class Utils {
 	
 	private static String path;
 	
+	private static int maxBrokers;
+	
 	public static File file;
 
 	public static boolean isRunning() {
@@ -33,26 +35,21 @@ public class Utils {
 		return false;
 	}
 	
-	public static boolean isConfigured(AuctionHouse plugin) {
-		if (file.exists()) {
-			return true;
-		}
-		return false;
-	}
-	
-	public static void preLoad() {
-		Utils.path = CommandHandlerAuctionConf.plugin.getDataFolder() + File.separator + "auctionhouse" + File.separator + "config.txt";
+	public static void preLoad(AuctionHouse plugin) {
+		Utils.path = plugin.getDataFolder() + File.separator + "auctionhouse" + File.separator + "config.txt";
 		file = new File (Utils.path);
+		
+		// get max brokers rading the config file
+		
 	}
 	
-	public static boolean createConf() {
+	public static boolean createConf(AuctionHouse plugin) {
 		try {
 			if (!file.exists()) {
+				Utils.preLoad(plugin);
 				file.mkdir();
-				return true;
-			} else {
-				return false;
 			}
+			return true;
 		} catch (Exception e) {
 			return false;
 		}

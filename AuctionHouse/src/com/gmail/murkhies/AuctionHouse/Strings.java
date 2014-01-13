@@ -13,5 +13,8 @@ public final class Strings {
 			DELETE_SUCEFULLY = "Zone deleted sucefully.",
 			ERROR_SAVING = "Error while saving this zone.",
 			FAILED_CREATE = "Error while creating the zone.",
-			ERROR_COMMAND = "Bad syntax, please read the guide.";
+			ERROR_COMMAND = "Bad syntax, please read the guide.",
+			ERROR_CREATE = "Bad syntax: try /ahs create zone",
+			ERROR_DELETE = "Bad syntax: try /ahs delete zone",
+			ERROR_SAVE = "Bad syntax: try /ahs save";
 }

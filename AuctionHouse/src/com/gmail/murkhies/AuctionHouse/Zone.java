@@ -42,8 +42,11 @@ public class Zone {
 		}
 	}
 	
+	public int getNumZones() {
+		return this.zone.size();
+	}
+	
 	public boolean save() {
-		System.out.println(Utils.file.getAbsolutePath());
 		String cad = "";
 		if (Utils.file.exists()) {
 			for (Position pos : zone) {

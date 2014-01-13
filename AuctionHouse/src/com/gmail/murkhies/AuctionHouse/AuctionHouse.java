@@ -8,7 +8,6 @@ public class AuctionHouse extends JavaPlugin {
 	public void onEnable() {
 		this.getCommand("auction").setExecutor(new CommandHandlerAuction(this));
 		this.getCommand("auctionset").setExecutor(new CommandHandlerAuctionConf(this));
-		Utils.preLoad();
 		getLogger().info("AuctionHouse loaded sucefully!");
 	}
 
