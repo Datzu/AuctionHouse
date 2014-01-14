@@ -58,7 +58,7 @@ public class CommandHandlerAuctionConf implements CommandExecutor {
 										player.sendMessage(Strings.ERROR_COMMAND);
 									}
 									break;
-								case "pos":
+								case "broker":
 									try {
 										if (args.length < 3) {
 											if (zone != null) {
@@ -68,9 +68,8 @@ public class CommandHandlerAuctionConf implements CommandExecutor {
 																.getBlockY(), player
 																.getLocation()
 																.getBlockZ());
-												zone.addPosition(pos);
-												player.sendMessage("Setting the zone number " + zone.getNumZones() + " in the position: "
-														+ pos.toString());
+												zone.addBrokerPosition(pos);
+												player.sendMessage("Setting the broker position in: " + pos.toString());
 											} else {
 												player.sendMessage(Strings.NO_ZONE);
 											}

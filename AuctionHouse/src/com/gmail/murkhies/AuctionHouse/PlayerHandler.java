@@ -10,20 +10,20 @@ public class PlayerHandler {
 		CURRENT_VALUE = currentValue;
 	}
 
-	public int getMAX_VALUE() {
+	public int getMaxValue() {
 		return MAX_VALUE;
 	}
 
-	public void setMAX_VALUE(int mAX_VALUE) {
-		MAX_VALUE = mAX_VALUE;
+	public void setMaxValue(int maxValue) {
+		MAX_VALUE = maxValue;
 	}
 
-	public int getCURRENT_VALUE() {
+	public int getCurrentValue() {
 		return CURRENT_VALUE;
 	}
 
-	public void setCURRENT_VALUE(int cURRENT_VALUE) {
-		CURRENT_VALUE = cURRENT_VALUE;
+	public void setCurrentValue(int currentValue) {
+		CURRENT_VALUE = currentValue;
 	}
 
 }

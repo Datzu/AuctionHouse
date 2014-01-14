@@ -26,6 +26,20 @@ public class CommandHandlerAuction implements CommandExecutor {
 				
 				if (CommandHandlerAuctionConf.zone != null) {
 					
+					switch (args[0]) {
+					case "join":
+						
+						break;
+					case "create":
+						
+						break;
+					case "stop":
+						
+						break;
+
+					default:
+						break;
+					}
 					
 					
 					

@@ -33,9 +33,9 @@ public class Zone {
 		}
 	}
 	
-	public boolean addPosition(Position pos) {
+	public boolean addBrokerPosition(Position pos) {
 		try {
-			this.zone.add(pos);
+			this.zone.add(1, pos);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -63,6 +63,10 @@ public class Zone {
 			return false;
 		}
 		return true;
+	}
+	
+	public void load() {
+		
 	}
 
 }
